@@ -10,12 +10,17 @@ import java.util.Optional;
 @Component
 public class EmployeeHelper implements Helper<Employee>{
     @Autowired
-    private Input input;
+    Input input;
+
+    /**
+     * Создает объект Employee и инициирует его при помощи диалога с пользователем
+     * @return Employee employee // инициированный объект
+     */
     @Override
     public Optional<Employee> create() {
         try {
             System.out.println("=== Создание работника ===");
-            Employee employee = new Employee();
+            Employee employee = new Employee("John", "Doe", "Developer", "5000");
             System.out.print("Имя: ");
             employee.setFirstname(input.nextLine());
             System.out.print("Фамилия: ");

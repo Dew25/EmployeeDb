@@ -19,7 +19,7 @@ public class Employee implements Serializable {
     private String position;
     private String salary;
 
-    public Employee() {
+    public Employee(String john, String doe, String developer, String number) {
     }
 
     public Long getId() {

@@ -22,7 +22,7 @@ public class EmployeeAppService implements AppService<Employee>{
         try {
             Optional<Employee> employee = employeeHelper.create();
             if(employee.isPresent()){
-                employeeRepository.save(employee.get());
+                Employee savedEmployee = employeeRepository.save(employee.get());
                 return true;
             }
         }catch (Exception e){
